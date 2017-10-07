@@ -153,13 +153,77 @@ div:empty {
     display: block;
     width: 100%;
 }
+/*selectory atrybutow
+selector[attr]- okresla elementy ktore mają atrybut niezależnie od wartości*/
+
 input[type] {
     background-color: green;
 }
-/*selectory atrybutow
-selector[attr]- okresla elementy ktore mają atrybut niezależnie od wartości*/
+
+/*selector[attr="val"]- okreslają elementy ktore posiadają atrybut o okreslonej wartości*/
 
 input[type="tel"] {
     background-color: yellow;
 }
-/*selector[attr="val"]- okreslają elementy ktore posiadają atrybut o okreslonej wartości*/
+
+/*selector[attr~="val"]-określa element ktory posiada atrybut, ktory w wartości posiada dany ciąg znakow(dokładny)*/
+
+input[type~="opis"] {
+    background-color: black;
+}
+
+/*selector[attr*="val"] okresla element ktory w atrybucie posiada wystąpienie ciągu znakow* nie musi być dokładna ilość znakow*/
+
+input[type*="piaty"] {
+    background-color:blue;
+}
+
+/*selector[attr^="val"] -okresla elementy ktorych atrybut rozpoczyna  się podanym ciągiem znakow*/
+
+input[type^="poczatek"] {
+    background-color:violet;
+}
+
+
+/*selector[attr$="val"] -okresla elementy ktorych atrybut kończy się podanym ciągiem znakow*/
+
+input[type$="koniec"] {
+    background-color:blue;
+}
+
+#centrowanie_bloku .inner {
+    margin:auto;
+    width: 40%;
+    background-color: aqua;
+}
+
+#floated img {
+    float: left;
+}
+
+img {
+    width: 500px;
+}
+#tranzycje .inner_2
+#tranzycje .inner_1 {
+    height: 300px;
+    width: 50%;
+} 
+#tranzycje .inner_1 {
+   background-color: green;
+/*
+   transition-property: width;
+    transition-duration: 4s;
+    transition-delay: 2s;
+*/
+    transition: all 0.4s;
+}
+
+#tranzycje .inner_2 {
+    background-color: red;
+}
+#tranzycje .inner_1:hover {
+    background-color: blue;
+    width: 800px;
+    
+}
