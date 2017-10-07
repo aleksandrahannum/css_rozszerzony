@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+p {
+    font-size: 30px;
+}
+
+#testowy {
+    background-color: aqua;
+}
+
+.testowy_inner {
+    color: green;
+    font-size: 36px;
+}
+
+/*selektor potomka- lapie wszystkich potomkow okreslanych przez selektor po spacji, niezależnie od ich poziomu zagnieżdżenia */
+
+#selektor_potomka p {
+    font-size:48px;
+    color: red;
+    
+}
+
+/*selektor dziecka/bezposredniego potomka łapie elementy na bezpośrednim poziomie zagnieżdżenia(1 w doł)*/
+
+#selektor_dziecka > p {
+    font-size: 40px;
+    color: violet;
+}
+
+/*selektor brata/braci potomka łapie elementy bezpośrednio po elemencie zagnieżdżającym na tym samym  poziomie zagnieżdżenia(1 w doł)*/
+
+#selektor_braci span + p {
+    color: black;
+    background-color: aqua;
+}
+
+/*pseudoelementy before/after
+nie istnieją bez ustalonej właściwości content after i before należą do elementu*/
+
+#pseudoelementy h1::before {
+    content:'Lorem ';
+    color: red;
+}
+#pseudoelementy h1::after {
+    content:' Lorem';
+    color: green;
+}
+
+/*pseudoelement first-letter*/
+#pseudoelementy h1::first-letter {
+    
+    color: yellow;
+}
+
+/*pseudoelement first-line*/
+#pseudoelementy h1::first-line {
+    color: chocolate;
+}
+
+/*pseudoklasy linkow*/
+#link a:link {
+    color: gray;
+}
+#link a:visited {
+    color: pink;
+}
+
+/*pseudoklasa :hover, po najechaniu myszką na element*/
+#link a:hover {
+    color: red;
+}
+/*pseudoklasa :active kiedy trzymamy LPM na obiekcie*/
+#link a:active {
+    color: orange;
+}
+/*pseudoklasa :focus, kiedy trzymamy w formularzu*/
+#inputy input {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+#inputy input:focus {
+    border: 3px solid red;
+}
+
+/*pseudoklasa: target określa co ma stac sie z elementem do ktorego prowadzi kotwica (link z okreslonym id)*/
+
+:target {
+    border: 1px solid black;
+}
+
+/*pseudoklasa :lang(nazwa języka) definiuje język strony lub elementu*/
+div {
+    background-color: gray;
+}
+div:lang(pl) {
+    background-color: yellow;
+}
+
+/*:first-child, :last-child,- wybierają pierwszy i ostatni element listy*/
+
+#lista-dzieci ul .list-item:first-child {
+    font-size: 30px;
+    color: red;
+}
+
+#lista-dzieci ul .list-item:last-child {
+    font-size: 30px;
+    color: blue;
+}
+
+/*:only-child łapie element ktory jest jedynym dzieckiem/potomike elementu nadrzędnego*/
+#jedyne-dziecko span:only-child {
+    font-style: italic;
+    font-size: 30px;
+    color: green;
+}
+
+/*:empty określa element ktory nie posiada żadnego contentu*/
+
+div:empty {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-color: red;
+}
+
+/*:nth-child() i :nth-lat-child() służą do określania elementow dzieci, możemy wskazać konkretne dziecko, parzyste/nieparzyste dzieci lub utworzyc wzor, ktore dzieci i co ile dzieci mają być wybierane*/
+
+#kontener .inner {
+    display: inline-block;
+    height: 300px;
+    background-color: red;
+    margin-bottom: 20px;
+    width: 33%;
+    float: left;
+    margin-right: 0.5%;
+}
+#kontener .inner:nth-child(3n+3) {
+    margin-right: 0;
+    
+}
+#kontener .inner:nth-child(even) {
+    background-color: yellow;
+}
+
+.clear {
+    clear: both;
+    display: block;
+    width: 100%;
+}
+input[type] {
+    background-color: green;
+}
+/*selectory atrybutow
+selector[attr]- okresla elementy ktore mają atrybut niezależnie od wartości*/
+
+input[type="tel"] {
+    background-color: yellow;
+}
+/*selector[attr="val"]- okreslają elementy ktore posiadają atrybut o okreslonej wartości*/
